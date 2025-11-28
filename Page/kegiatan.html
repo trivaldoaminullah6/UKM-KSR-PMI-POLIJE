@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
   /* animasi berubah warna hanya teks */
   .nav-link {
@@ -53,78 +54,81 @@
     transform: scale(1.1);
   }
    /* Hero section */
-  .hero {
-    background: url('../image/konten2.jpeg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 150px 70px;
-    position: relative;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.616);
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
+   .hero-section {
+            height: 450px;
+            overflow: hidden;
+        }
 
-  /* Tombol back to top */
-  #backToTop {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  #backToTop:hover {
-    transform: scale(1.1);
-  }
+        .hero-desc {
+            font-size: 16px;
+        }
 
-    /* Card */
-  .activity-card {
-    background: rgba(0, 0, 0, 0.15); /* GELAP TRANSPARAN SAAT TIDAK DISENTUH */
-    backdrop-filter: blur(2px);
-    transition: 0.3s ease;
-  }
+        .ksr-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
 
-  /* Efek hover: card menjadi terang */
-  .activity-card:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-  }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
 
-  /* Gambar dibuat gelap transparan */
-  .image-container {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-  }
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+        }
 
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.4s ease;
-    filter: brightness(55%); /* GELAP */
-  }
+        header {
+            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-  /* Saat hover: gambar menjadi terang */
-  .activity-card:hover img {
-    filter: brightness(100%);
-    transform: scale(1.06);
-  }
+        header h2 {
+            color: #C50606;
+            text-align: center;
+            margin-top: 50px;
+            font-weight: bold;
+        }
 
-  /* Overlay gelap lembut */
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    transition: 0.3s;
-  }
+        header p {
+            text-align: center;
+            font-size: 16px;
+        }
 
-  .activity-card:hover .image-overlay {
-    background: rgba(0,0,0,0);
-  }
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            filter: brightness(75%);
+        }
+
+        .donor-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .pelatihan-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .simulasi-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
   </style>
 
 </head>
@@ -172,121 +176,79 @@
 </nav>
 
 <!-- Konten 1  -->
- <section id="beranda" class="hero">
-  <div class="hero-content">
-    <h1 class="fw-bold display-5">UKM KSR POLIJE</h1>
-    <p class="lead">UKM KSR PMI Unit Politeknik Negeri Jember telah melaksanakan berbagai kegiatan yang bertujuan untuk meningkatkan kapasitas relawan serta memberikan kontribusi nyata kepada masyarakat. Setiap kegiatan dilaksanakan dengan penuh tanggung jawab, semangat kemanusiaan, dan kerja sama antaranggota.</p>
-  </div>
-</section>
-<!-- Konten 1 end -->
+ <section class="hero-section position-relative text-center text-white">\
+        <img src="../image/ksr.jpg" class="ksr-bg" alt="Foto KSR">
+        <div class="overlay"></div>
+        <div class="hero-content position-absolute top-50 start-50 translate-middle">
+            <h1 class="fw-bold">UKM KSR POLIJE</h1>
+            <p class="lead mt-3 hero-desc">
+                UKM KSR PMI Unit Politeknik Negeri Jember telah melaksanakan berbagai kegiatan yang bertujuan untuk meningkatkan kapasitas relawan serta memberikan kontribusi nyata kepada masyarakat. Setiap kegiatan dilaksanakan dengan penuh tanggung jawab, semangat kemanusiaan, dan kerja sama antaranggota.
+            </p>
+        </div>
+    </section>
 
-<!-- Konten 1  -->
-<br>
-<section id="kalender" class="container my-5">
+    <header>
+        <h2>KEGIATAN</h2>
+        <p>Ini adalah rangkaian kegiatan yang telah berhasil dicapai oleh UKM KSR PMI Politeknik Negeri Jember sebagai wujud komitmen dalam menjalankan tugas kemanusiaan dan pengabdian kepada masyarakat. Setiap program yang terlaksana tidak hanya menunjukkan dedikasi para relawan dalam meningkatkan kapasitas diri, tetapi juga mencerminkan semangat kebersamaan, kepedulian, serta profesionalitas dalam memberikan pelayanan terbaik.</p>
+    </header>
 
-  <!-- TITLE -->
-  <div class="text-center mb-5">
-    <h2 class="fw-bold text-danger text-uppercase position-relative d-inline-block">
-      Kegiatan
-      <span class="position-absolute start-50 translate-middle-x bottom-0 bg-danger" 
-            style="width: 80px; height: 3px; border-radius: 10px;"></span>
-    </h2>
-    <p class="text-secondary text-center mt-4">
-   Ini adalah rangkaian kegiatan yang telah berhasil dicapai oleh UKM KSR PMI Politeknik Negeri Jember sebagai wujud komitmen dalam menjalankan tugas kemanusiaan dan pengabdian kepada masyarakat. Setiap program yang terlaksana tidak hanya menunjukkan dedikasi para relawan dalam meningkatkan kapasitas diri, tetapi juga mencerminkan semangat kebersamaan, kepedulian, serta profesionalitas dalam memberikan pelayanan terbaik.
-  </p>
-  </div>
+    <div class="album py-5 bg-light">
+    <div class="container">
 
-  <div class="row g-4">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <!--CARD 1-->
+        <div class="col">
+          <div class="card shadow-sm position-relative rounded-4 overflow-hidden">
+            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2">Sukses</span>
+            <img src="../image/donordarah.jpg" class="donor-img" alt="Donor Darah">
 
-    <!-- Kegiatan 1 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="activity-card card border-0 h-100 rounded-4 overflow-hidden">
-
-        <div class="position-relative image-container">
-          <img src="../image/konten1.JPG" class="card-img-top" alt="Donor Darah">
-
-         <!-- STATUS SUKSES -->
-          <span class="badge bg-warning position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow">
-            Sukses
-          </span>
-
-          <div class="image-overlay"></div>
+            <div class="card-body">
+                <h5 class="modal-title text-danger fw-bold">Donor Darah Polije</h5>
+              <p class="card-text">Kegiatan rutin UKM KSR untuk membantu PMI dalam pemenuhan stok darah di wilayah Jember.</p>
+                <hr>
+                <p style="padding-left: 5px; font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-calendar-event-fill text-danger me-1"></i></strong>10 Januari 2025 </p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-clock-fill text-danger me-1"></i></strong>08.00-12.00 WIB</p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px; "><strong><i class="bi bi-geo-alt-fill text-danger me-1"></i></strong>Aula Utama Polije</p>
+            </div>
+          </div>
         </div>
 
-        <div class="card-body">
-          <h5 class="fw-bold text-danger">Donor Darah Polije</h5>
-          <p class="text-secondary small">
-            Kegiatan rutin UKM KSR untuk membantu PMI dalam pemenuhan stok darah di wilayah Jember.
-          </p>
-          <ul class="list-unstyled small">
-            <li><i class="fa-solid fa-calendar-day text-danger me-2"></i>10 Januari 2025</li>
-            <li><i class="fa-solid fa-clock text-danger me-2"></i>08.00 - 12.00 WIB</li>
-            <li><i class="fa-solid fa-location-dot text-danger me-2"></i>Aula Utama Polije</li>
-          </ul>
+        <!--CARD 2-->
+        <div class="col">
+          <div class="card shadow-sm position-relative rounded-4 overflow-hidden">
+            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2">Sukses</span>
+            <img src="../image/kepalangmerahan.jpg" class="pelatihan-img" alt="Pelatihan Kepalangmerahan">
+
+            <div class="card-body">
+                <h5 class="modal-title text-danger fw-bold">Pelatihan Dasar Kepalangmerahan</h5>
+              <p class="card-text">Pelatihan untuk meningkatkan kemampuan anggota baru dalam prinsip dasar kepalangmerahan.</p>
+              <hr>
+                <p style="padding-left: 5px; font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-calendar-event-fill text-danger me-1"></i></strong>10 Januari 2025 </p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-clock-fill text-danger me-1"></i></strong>08.00-12.00 WIB</p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px; "><strong><i class="bi bi-geo-alt-fill text-danger me-1"></i></strong>Aula Utama Polije</p>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <!--CARD 3-->
+        <div class="col">
+          <div class="card shadow-sm position-relative rounded-4 overflow-hidden">
+            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2">Sukses</span>
+            <img src="../image/simulasitanggapbencana.jpg" class="simulasi-img" alt="Simulasi Tanggap Bencana">
+
+            <div class="card-body">
+                <h5 class="modal-title text-danger fw-bold">Simulasi Tanggap Bencana</h5>
+              <p class="card-text">Latihan kesiapsiagaan menghadapi bencana yang melibatkan mahasiswa dan masyarakat sekitar kampus.</p>
+              <hr>
+                <p style="padding-left: 5px; font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-calendar-event-fill text-danger me-1"></i></strong>10 Januari 2025 </p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px;"><strong><i class="bi bi-clock-fill text-danger me-1"></i></strong>08.00-12.00 WIB</p>
+                <p style="padding-left: 5px;  font-size: 13px; margin-bottom: 4px; "><strong><i class="bi bi-geo-alt-fill text-danger me-1"></i></strong>Aula Utama Polije</p>
+            </div>
+          </div>
+        </div>
     </div>
-
-    <!-- Kegiatan 2 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="activity-card card border-0 h-100 rounded-4 overflow-hidden">
-
-        <div class="position-relative image-container">
-          <img src="../image/konten2.jpeg" class="card-img-top" alt="Pelatihan Dasar">
-
-          <!-- STATUS SUKSES -->
-          <span class="badge bg-warning position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow">
-            Sukses
-          </span>
-
-          <div class="image-overlay"></div>
-        </div>
-
-        <div class="card-body">
-          <h5 class="fw-bold text-danger">Pelatihan Dasar Kepalangmerahan</h5>
-          <p class="text-secondary small">
-            Pelatihan untuk meningkatkan kemampuan anggota baru dalam prinsip dasar kepalangmerahan.
-          </p>
-          <ul class="list-unstyled small">
-            <li><i class="fa-solid fa-calendar-day text-danger me-2"></i>5 Februari 2025</li>
-            <li><i class="fa-solid fa-clock text-danger me-2"></i>09.00 - 16.00 WIB</li>
-            <li><i class="fa-solid fa-location-dot text-danger me-2"></i>Gedung UKM Center Polije</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kegiatan 3 -->
-    <div class="col-md-6 col-lg-4">
-      <div class="activity-card card border-0 h-100 rounded-4 overflow-hidden">
-
-        <div class="position-relative image-container">
-          <img src="../image/konten2.jpeg" class="card-img-top" alt="Simulasi Bencana">
-
-          <!-- STATUS SUKSES -->
-          <span class="badge bg-warning position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow">
-            Sukses
-          </span>
-
-          <div class="image-overlay"></div>
-        </div>
-
-        <div class="card-body">
-          <h5 class="fw-bold text-danger">Simulasi Tanggap Bencana</h5>
-          <p class="text-secondary small">
-            Latihan kesiapsiagaan menghadapi bencana yang melibatkan mahasiswa dan masyarakat sekitar kampus.
-          </p>
-          <ul class="list-unstyled small">
-            <li><i class="fa-solid fa-calendar-day text-danger me-2"></i>28 Maret 2025</li>
-            <li><i class="fa-solid fa-clock text-danger me-2"></i>07.00 - 13.00 WIB</li>
-            <li><i class="fa-solid fa-location-dot text-danger me-2"></i>Lapangan Utama Polije</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
+  </div>
 
 
 <!-- Dummy spacing -->
