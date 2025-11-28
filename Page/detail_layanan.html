@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UKM KSR</title>
+    <!-- Icone web -->
+   <link rel="icon" type="image/png" href="../image/web_logo.png">
+  <!-- Icone web end -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+   /* animasi berubah warna hanya teks */
+  .nav-link {
+    position: relative;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #6b7280 !important; /* abu-abu netral */
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #dc2626 !important; /* merah KSR */
+  }
+
+  .nav-link.active {
+    color: #dc2626 !important;
+  }
+
+  /* dropdown animasi */
+  .dropdown-menu {
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  body {
+    background-color: #f3f4f6;
+  }
+
+  /* Tombol back to top */
+  #backToTop {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  #backToTop:hover {
+    transform: scale(1.1);
+  }
+
+  .header-section {
+    position: relative;
+    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 60px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background:
+      linear-gradient(to right, rgba(214, 0, 0, 0.8), transparent),
+      url('../image/Gambar%20WhatsApp%202025-11-25%20pukul%2007.55.56_06652ffd.jpg');
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(214, 0, 0, 0.8), transparent);
+    z-index: -1;
+  }
+
+  .header-section > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .section-title:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 30px;
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .content-section {
+    background-color: white;
+    border-radius: 50px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .content-section:hover {
+    transform: translateY(-5px);
+  }
+
+  /*  HAPUS .section-header — diganti dengan judul baru */
+  /* JUDUL LAYANAN DI ATAS DESKRIPSI */
+  .service-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: center;
+    display: block;
+    margin-right: 50px;
+  }
+
+  /* Opsional: judul kiri di layar besar */
+  @media (min-width: 768px) {
+    .service-title {
+      text-align: left;
+    }
+  }
+
+  .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .content-section:nth-child(even) .section-content {
+    flex-direction: row-reverse;
+  }
+
+  .content-section:nth-child(odd) .section-content {
+    flex-direction: row;
+  }
+
+  .text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text-content p {
+  text-align: justify;      /* kalau paragraf mau tetap justify */
+  width: 100%;              /* biar paragrafnya tetap rapi satu kolom */
+  }
+
+  .service-title {
+  margin-bottom: 15px;      /* atur jarak judul–deskripsi */
+  text-align: center !important;
+  margin-top: 50px;
+  }
+
+  .service-title1 {
+    margin-top: 0px;
+    font-weight: bold;
+    margin-bottom: 20xp;
+  }
+
+  .image-content {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 100px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .image-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .cta-button {
+    background-color: #d60000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #a70000;
+    text-decoration: none;
+  }
+
+  .list-item {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .list-item:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d60000;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .section-content {
+      flex-direction: column;
+    }
+
+    .text-content,
+    .image-content {
+      min-width: 100%;
+    }
+
+
+  }
+  </style>
+
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-danger" href="#">UKM KSR POLIJE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="./tentang_kami.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="./kegiatan.html">Kegiatan</a></li>
+        <li class="nav-item"><a class="nav-link" href="./pencapaian.html">Pencapaian</a></li>
+
+
+        <!-- Dropdown Layanan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./layanan.html">Informasi Layanan</a></li>
+            <li><a class="dropdown-item" href="./detail_layanan.html">Detail Layanan</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Keanggotaan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kenggotaan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./daftar_anggota.html">Daftar Anggota</a></li>
+            <li><a class="dropdown-item" href="./pendaftaran_anggota.html">Pendaftaram Anggota</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="./galery_dokumentasi.html">Galeri Dokumentasi</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Konten 1 -->
+ <br><br><br>
+     <div class="container-fluid">
+        <div class="header-section">
+            <h1 class="section-title">DETAIL LAYANAN</h1>
+            <h2 class="section-subtitle">UKM KSR PMI POLIJE</h2>
+        </div>
+        
+        <!-- Donor Darah Section -->
+        <div class="content-section">
+            <div class="section-content">
+                <div class="text-content">
+                    <h3 class="service-title">DONOR DARAH</h3>
+                    <p>Kegiatan donor darah di Polije umumnya diselenggarakan oleh UKM KSR PMI POLIJE bekerja sama dengan UDD PMI Kabupaten Jember, kadang juga melibatkan KPRI Polije sebagai bagian dari aksi sosial. Kegiatan ini bisa diadakan di berbagai lokasi seperti Aula Soetrisno Widjaja atau Hall gedung jurusan tertentu. Layanan ini bertujuan untuk menggalang partisipasi masyarakat dalam kegiatan donor darah dan sukses mencatatkan jumlah partisipasi yang cukup besar. Donor darah ini juga menjadi aksi sosial yang dapat menyelamatkan nyawa.</p>
+                </div>
+                <div class="image-content">
+                    <img src="../image/3ce80cc73d434b8f991b9721cc425f22.jpg" alt="Donor Darah">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Webinar dan Pelatihan Section -->
+        <div class="content-section">
+            <div class="section-content">
+                <div class="text-content">
+                    <h3 class="service-title">WEBINAR DAN PELATIHAN</h3>
+                    <p>UKM KSR PMI Polije aktif menyelenggarakan berbagai kegiatan edukasi dan pelatihan, baik untuk internal maupun eksternal. Salah satu bentuknya adalah webinar yang diselenggarakan untuk mensosialisasikan pentingnya donor darah kepada masyarakat umum. Melalui kegiatan ini, mereka berbagi pengetahuan tentang prosedur donor darah, syarat-syaratnya, serta manfaatnya bagi kesehatan dan kemanusiaan. Edukasi ini juga mencakup sosialisasi nilai-nilai kemanusiaan dan kepedulian/merahian yang menjadi dasar dari setiap kegiatan mereka.</p>
+                </div>
+                <div class="image-content">
+                    <img src="../image/7d9944cb3b2a4d01b48133533ff974fd.jpg" alt="Webinar dan Pelatihan">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pengabdian Masyarakat Section -->
+        <div class="content-section">
+            <div class="section-content">
+                <div class="text-content">
+                    <h3 class="service-title">PENGABDIAN MASYARAKAT MELALUI PROGRAM ORMAWA MEMBANGUN NEGERI (POMN)</h3>
+                    <p>Program Pro-Rapi sendiri mencakup berbagai kegiatan, mulai dari pelatihan peningkatan gizi, praktek pemberian makanan bergizi, hingga sosialisasi dan pelatihan pemantauan kesehatan menggunakan alat-alat khusus. Kegiatan ini sejalan dengan upaya pemerintah untuk mengurangi angka stunting di Indonesia, terutama di daerah pedesaan yang aksesnya terbatas. Program ini adalah kesempatan bagi mahasiswa untuk belajar langsung dengan membawa manfaat kampus ke dalam masyarakat desa, meningkatkan kapasitas mereka dalam memberdayakan masyarakat. Selain melakukan pelatihan, UKM KSR PMI Polije juga melakukan evaluasi dan meninjau respon masyarakat terhadap keberlanjutan program Pro-Rapi. Program ini diharapkan dapat menjadi percontohan bagi desa-desa lainnya dalam penanganan gizi dan stunting di wilayah Kabupaten Jember.</p>
+                </div>
+                <div class="image-content">
+                    <img src="../image/96098819f52041ada74f34bf993f7d10.jpg" alt="Pengabdian Masyarakat">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bantuan Bencana Section -->
+        <div class="content-section">
+            <div class="text-content">
+              <h3 class="service-title1">BANTUAN BENCANA, LAYANAN AMBULANS, DAN KESEHATAN</h3>
+                <p>UKM KSR PMI Polije berperan dalam bantuan bencana melalui pelatihan kesiapsiagaan, simulasi bencana, dan partisipasi langsung sebagai relawan dalam evakuasi, pemberian pertolongan pertama, hingga distribusi bantuan dan pendirian dapur umum bagi korban. Kesiapan anggota KSR PMI ditunjang dengan berbagai kegiatan pelatihan dan simulasi yang bertujuan untuk meningkatkan keterampilan dan respon cepat dalam situasi darurat bencana. Relawan KSR PMI Polije dapat memberikan pertolongan pertama dan membantu proses evaluasi korban di lokasi bencana. Dalam situasi bencana, mereka juga terlibat dalam pendirian dapur umum, penampungan darurat, dan distribusi bantuan kepada para korban. Melalui program-program pengabdian masyarakat, KSR PMI Polije turut aktif membantu masyarakat, termasuk dalam edukasi mitigasi bencana untuk meminimalisir risiko di daerah rawan</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+<!-- Konten 1 end -->
+
+
+
+
+<!-- Dummy spacing -->
+<!-- <div class="my-5 py-5"></div>
+<div class="my-5 py-5"></div> -->
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-danger text-white pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+
+      <!-- Logo dan Info -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+          <img src="../image/logo.jpeg" alt="Logo KSR" width="60" height="60" class="me-3 rounded-circle bg-white p-1 shadow">
+          <div>
+            <h5 class="fw-bold mb-1">KSR PMI POLIJE</h5>
+            <p class="small text-light mb-0">Unit Kegiatan Mahasiswa</p>
+            <a href="https://polije.ac.id/" target="_blank" class="text-white text-decoration-underline small">
+              https://polije.ac.id/
+            </a>
+          </div>
+        </div>
+        <p class="small text-light mb-3">
+          UKM Korps Sukarela PMI Politeknik Negeri Jember bergerak di bidang kemanusiaan,
+          kepalangmerahan, dan pengabdian masyarakat.
+        </p>
+        <div class="d-flex gap-3 mt-3 justify-content-center justify-content-md-start">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Tautan Cepat -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Tautan Cepat</h6>
+        <ul class="list-unstyled text-center text-md-start">
+          <li><a href="../index.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Beranda</a></li>
+          <li><a href="./tentang_kami.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Tentang Kami</a></li>
+          <li><a href="./kegiatan.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Kegiatan</a></li>
+          <li><a href="./pencaian.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Pencapaiaan</a></li>
+          <li><a href="./galery_dokumentasi.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Galeri Dokumentasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Kontak Kami</h6>
+        <ul class="list-unstyled small mb-0 text-center text-md-start">
+          <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Jl. Mastrip, Kampus Politeknik Negeri Jember</li>
+          <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i>ksr.pmi@polije.ac.id</li>
+          <li class="mb-2"><i class="fa-solid fa-phone me-2"></i>+62 812-3456-7890</li>
+        </ul>
+        <h6 class="small fw-bold mt-3 mb-1">Jam Operasional</h6>
+        <p class="small mb-0">Senin - Jumat: 08.00 - 16.00 WIB</p>
+        <p class="small">Sabtu & Minggu: Tutup</p>
+      </div>
+    </div>
+
+    <hr class="border-light my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+      <p class="small mb-0">&copy; <span id="year"></span> UKM KSR PMI POLIJE. All Rights Reserved.</p>
+      <div class="mt-3 mt-md-0">
+        <a href="#" class="text-white text-decoration-none small me-3">Kebijakan Privasi</a>
+        <a href="#" class="text-white text-decoration-none small me-3">Syarat & Ketentuan</a>
+        <a href="#" class="text-white text-decoration-none small">Peta Situs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Optional: Back to top button -->
+<button id="backToTop" class="btn btn-danger rounded-circle position-fixed" style="bottom: 20px; right: 20px; display: none;">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // Scroll to top button
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 400) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+
+  document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UKM KSR</title>
+
+  <!-- Icone web -->
+ <link rel="icon" type="image/png" href="../image/web_logo.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Icone -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Icone end -->
+
+  <style>
+    /* animasi berubah warna hanya teks */
+    .nav-link {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #6b7280 !important;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #dc2626 !important;
+    }
+
+    .nav-link.active {
+      color: #dc2626 !important;
+    }
+
+    /* dropdown animasi */
+    .dropdown-menu {
+      opacity: 0;
+      transform: translateY(10px);
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+    .dropdown-menu.show {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    body {
+      background-color: #f3f4f6;
+    }
+
+    /* Tombol back to top */
+    #backToTop {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #backToTop:hover {
+      transform: scale(1.1);
+    }
+
+    /* Card anggota hover */
+    #daftar-anggota .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease;
+    }
+
+    section .fa-check {
+      font-size: 0.9rem;
+    }
+
+    /* Card Anggota Styling */
+    #daftar-anggota .card {
+    border-radius: 10px;
+    overflow: hidden;
+    }
+
+    #daftar-anggota .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    }
+
+    #daftar-anggota .card-body {
+    text-align: left; /* RATANYA TIDAK CENTER */
+    }
+
+    #daftar-anggota .card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+    }
+
+    #daftar-anggota h6 {
+    font-size: 1rem;
+    }
+
+      /* Grid Card Layout */
+  #cardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    #cardContainer {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  /* Card Style */
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .3s ease;
+    background: #fff;
+  }
+
+  /* Image Aspect Ratio */
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body h6 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .card-body p {
+    margin-bottom: 6px;
+  }
+
+  /* Hover efek */
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(220, 20, 60, .2);
+  }
+
+  /* Badge */
+  .badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+  }
+
+  /* Pagination spacing */
+  .pagination .page-link {
+    border-radius: 6px;
+    margin: 0 3px;
+  }
+
+  .pagination .active {
+    background-color: #d10000 !important;
+    border-color: #d10000 !important;
+  }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-danger" href="#">UKM KSR POLIJE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="./tentang_kami.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="./kegiatan.html">Kegiatan</a></li>
+        <li class="nav-item"><a class="nav-link" href="./pencapaian.html">Pencapaian</a></li>
+
+
+        <!-- Dropdown Layanan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./layanan.html">Informasi Layanan</a></li>
+            <li><a class="dropdown-item" href="./detail_layanan.html">Detail Layanan</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Keanggotaan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kenggotaan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./daftar_anggota.html">Daftar Anggota</a></li>
+            <li><a class="dropdown-item" href="./pendaftaran_anggota.html">Pendaftaram Anggota</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="./galery_dokumentasi.html">Galeri Dokumentasi</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- 🎓 SECTION DOSEN PEMBIMBING + INFORMASI SINGKAT (CARD VERSION) -->
+<!-- ========================================================= -->
+
+<section class="container my-5 pt-4">
+  <div class="card shadow-lg border-0 p-4 rounded-4" style="background: #ffffff;">
+    <div class="row align-items-center g-4">
+
+      <!-- Foto Dosen Pembimbing -->
+      <div class="col-md-4 text-center">
+        <div class="p-3">
+          <img src="../image_daftar_anggota/Pembina.jpg"
+               alt="Dosen Pembimbing"
+               class="rounded-circle shadow"
+               width="220" height="220"
+               style="object-fit: cover;">
+          <h5 class="fw-bold mt-3 text-danger">Miyalatul Muna, S.Kom.,M.T</h5>
+          <p class="text-secondary mb-0">Pembina UKM KSR PMI POLIJE</p>
+        </div>
+      </div>
+
+      <!-- Informasi Singkat -->
+      <div class="col-md-8">
+        <h3 class="fw-bold text-danger mb-3">UKM KSR PMI Politeknik Negeri Jember</h3>
+
+        <p class="text-secondary" style="font-size: 0.95rem;">
+          UKM Korps Sukarela PMI Politeknik Negeri Jember merupakan unit kegiatan mahasiswa 
+          yang bergerak dalam bidang kemanusiaan, kepalangmerahan, dan penanggulangan bencana. 
+          Dengan bimbingan Dosen Pembina, UKM KSR aktif menyelenggarakan pelatihan pertolongan 
+          pertama, donor darah, edukasi kesehatan, hingga pengabdian masyarakat.
+        </p>
+
+        <!-- List poin -->
+        <div class="mt-3">
+
+          <div class="d-flex align-items-center mb-2">
+            <i class="fa-solid fa-check text-danger me-2"></i>
+            <span>Mengembangkan skill pertolongan pertama & kesiapsiagaan bencana.</span>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <i class="fa-solid fa-check text-danger me-2"></i>
+            <span>Aktif dalam kegiatan kemanusiaan dan sosial di masyarakat.</span>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-check text-danger me-2"></i>
+            <span>Membentuk anggota yang disiplin, peduli, dan profesional.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Spacing -->
+<section id="daftar-anggota" class="container my-5">
+
+  <h2 class="text-center fw-bold mb-4 text-danger">Daftar Anggota UKM KSR 2025/2026</h2>
+
+  <!-- Filter Devisi -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-4">
+      <select id="filterDevisi" class="form-select shadow-sm">
+        <option value="all">Semua Devisi</option>
+        <option value="Leader">Leader</option>
+        <option value="Sekertaris">Sekertaris</option>
+        <option value="Bendahara">Bendahara</option>
+        <option value="Danus">Danus</option>
+        <option value="PKBM">PKBM</option>
+        <option value="Logistik">Logistik</option>
+        <option value="Humas">Humas</option>
+        <option value="SDM">SDM</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Card Anggota -->
+  <div id="cardContainer">
+
+    <!-- --- ANGGOTA PAGE 1 (8 CARD) --- -->
+    <!-- Kamu bisa tambah data lainnya di page 1 -->
+
+    <!-- Ketua Dan Wakil -->
+    <div class="card-item" data-devisi="Leader" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Ketua 
+        </span>
+
+        <img src="../image_daftar_anggota/Ketua dan Wakil (2).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Amanda Areta</h6>
+
+           <p class="text-danger text-decoration-none"><i class="bi bi-instagram"></i> amndart.a</p>
+
+        </div>
+      </div>
+    </div>
+
+        <div class="card-item" data-devisi="Leader" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Wakil Ketua
+        </span>
+
+        <img src="../image_daftar_anggota/Ketua dan Wakil (1).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Ananda Okta Randini</h6>
+          <p class="text-danger text-decoration-none"><i class="bi bi-instagram"></i> @a_nandaokta_13</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Ketua dan Wakil End -->
+
+    <!-- Sekertaris  -->
+      <div class="card-item" data-devisi="Sekertaris" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Sekertaris
+        </span>
+
+        <img src="../image_daftar_anggota/Sekertaris (2).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Hilma Suada</h6>
+          <p class="text-danger text-decoration-none"><i class="bi bi-instagram"></i> @hilllmaaaaa</p>
+
+        </div>
+      </div>
+    </div>
+
+     <div class="card-item" data-devisi="Sekertaris" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Sekertaris
+        </span>
+
+        <img src="../image_daftar_anggota/Sekertaris (1).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Ismah Azalin Muhtarimah </h6>
+          <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @ismahazalinnnn
+            </i></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sekertaris end -->
+
+
+    <!-- Bendahara  -->
+     <div class="card-item" data-devisi="Bendahara" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Bendahara
+        </span>
+
+        <img src="../image_daftar_anggota/Bendahara (1).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Vania Devi S. </h6>
+          <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+            </i></p>
+
+        </div>
+      </div>
+    </div>
+
+        <div class="card-item" data-devisi="Bendahara" data-page="1">
+      <div class="card shadow-sm border-0 position-relative">
+        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+          Bendahara
+        </span>
+
+        <img src="../image_daftar_anggota/Bendahara (2).jpg" class="card-img-top">
+        
+        <div class="card-body text-right">
+          <h6 class="fw-bold text-danger mb-1">Wa Ode Isnaini </h6>
+          <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+            </i></p>
+
+        </div>
+      </div>
+    </div>
+    <!-- Bendahara end -->
+
+
+    <!-- Danus  -->
+    <div class="card-item" data-devisi="Danus" data-page="1">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Danus
+            </span>
+
+            <img src="../image_daftar_anggota/Danus (1).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Septiani Anisa Munawaroh </h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="Danus" data-page="1">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Danus
+            </span>
+
+            <img src="../image_daftar_anggota/Danus (2).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Muhammad Firman </h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+    <!-- Danus  end -->
+
+    <!-- Copy 7 lainnya untuk page=1 -->
+    <!-- ..................... -->
+
+    <!-- --- ANGGOTA PAGE 2 (8 CARD) --- -->
+
+   
+    <div class="card-item" data-devisi="Danus" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Danus
+            </span>
+
+            <img src="../image_daftar_anggota/Danus (3).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Arvinia Greta Ayu W. </h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- PKBM  -->
+
+    <div class="card-item" data-devisi="PKBM" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              PKBM
+            </span>
+
+            <img src="../image_daftar_anggota/PKBM (1).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Brenda Yensa K.P </h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+    <div class="card-item" data-devisi="PKBM" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              PKBM
+            </span>
+
+            <img src="../image_daftar_anggota/PKBM (2).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Jauharotul K. @-</h6>
+              <h6 class="fw-bold text-danger mb-1">Zahrina Neiliani @- </h6>
+              <!-- <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-</i></p>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-</i></p> -->
+            
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="PKBM" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              PKBM
+            </span>
+
+            <img src="../image_daftar_anggota/PKBM (3).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Neila Vesta Aristya Ilhami</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- PKBM End -->
+
+
+        <!-- Logistik  -->
+         <div class="card-item" data-devisi="Logistik" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Logistik
+            </span>
+
+            <img src="../image_daftar_anggota/Logistik (1).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Fihrotul Amalia</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="Logistik" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Logistik
+            </span>
+
+            <img src="../image_daftar_anggota/Logistik (2).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Aprilia Gatha Kartini</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="Logistik" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Logistik
+            </span>
+
+            <img src="../image_daftar_anggota/Logistik (3).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Shergi Reyhan A.F.</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="Logistik" data-page="2">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+              Logistik
+            </span>
+
+            <img src="../image_daftar_anggota/Logistik (4).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Lia Nabila Putri</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+        <!-- Logistik end -->
+
+    <!-- Copy 7 lainnya untuk page=2 -->
+    <!-- ..................... -->
+
+
+
+    <!-- Page 3 Buat 8 -->
+
+
+    <!-- Humas -->
+        <div class="card-item" data-devisi="Humas" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             Humas
+            </span>
+
+            <img src="../image_daftar_anggota/Humas (1).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Abdul Wahid @-</h6>
+              <h6 class="fw-bold text-danger mb-1">Arsa Rif'At P @-</h6>
+              <!-- <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p> -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="Humas" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             Humas
+            </span>
+
+            <img src="../image_daftar_anggota/Humas (2).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Nofal Alfikri</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+         <div class="card-item" data-devisi="Humas" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             Humas
+            </span>
+
+            <img src="../image_daftar_anggota/Humas (3).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Mhelfyn Echa Abelia</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+      <!-- End Humas -->
+
+
+      <!-- SDM  -->
+        <div class="card-item" data-devisi="SDM" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             SDM
+            </span>
+
+            <img src="../image_daftar_anggota/SDM (1).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Najwa Wahdaniyatul Meilani</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+
+         <div class="card-item" data-devisi="SDM" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             SDM
+            </span>
+
+            <img src="../image_daftar_anggota/SDM (2).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Fizilail Rifa Damayanti</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card-item" data-devisi="SDM" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             SDM
+            </span>
+
+            <img src="../image_daftar_anggota/SDM (3).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Safiratil Mahbuba</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="SDM" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             SDM
+            </span>
+
+            <img src="../image_daftar_anggota/SDM (4).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Siddiqoh Sirin Nainawa</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item" data-devisi="SDM" data-page="3">
+          <div class="card shadow-sm border-0 position-relative">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+             SDM
+            </span>
+
+            <img src="../image_daftar_anggota/SDM (5).jpg" class="card-img-top">
+            
+            <div class="card-body text-right">
+              <h6 class="fw-bold text-danger mb-1">Anggun Ameliatuzahroh</h6>
+              <p class="text-danger text-decoration-none"><i class="bi bi-instagram"> @-
+                </i></p>
+
+            </div>
+          </div>
+        </div>
+      <!-- SDM  end -->
+
+        
+
+
+
+
+    <!-- Copy 7 lainnya untuk page=3 -->
+    <!-- ..................... -->
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-4">
+    <nav>
+      <ul class="pagination pagination-sm">
+        <li class="page-item"><button class="page-link active" data-page="1">1</button></li>
+        <li class="page-item"><button class="page-link" data-page="2">2</button></li>
+        <li class="page-item"><button class="page-link" data-page="3">3</button></li>
+      </ul>
+    </nav>
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<!-- Footer -->
+<footer class="bg-danger text-white pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+
+      <!-- Logo dan Info -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+          <img src="../image/logo.jpeg" alt="Logo KSR" width="60" height="60" class="me-3 rounded-circle bg-white p-1 shadow">
+          <div>
+            <h5 class="fw-bold mb-1">KSR PMI POLIJE</h5>
+            <p class="small text-light mb-0">Unit Kegiatan Mahasiswa</p>
+            <a href="https://polije.ac.id/" target="_blank" class="text-white text-decoration-underline small">
+              https://polije.ac.id/
+            </a>
+          </div>
+        </div>
+        <p class="small text-light mb-3">
+          UKM Korps Sukarela PMI Politeknik Negeri Jember bergerak di bidang kemanusiaan,
+          kepalangmerahan, dan pengabdian masyarakat.
+        </p>
+        <div class="d-flex gap-3 mt-3 justify-content-center justify-content-md-start">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Tautan Cepat -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Tautan Cepat</h6>
+        <ul class="list-unstyled text-center text-md-start">
+          <li><a href="../index.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Beranda</a></li>
+          <li><a href="./tentang_kami.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Tentang Kami</a></li>
+          <li><a href="./kegiatan.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Kegiatan</a></li>
+          <li><a href="./pencaian.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Pencapaiaan</a></li>
+          <li><a href="./galery_dokumentasi.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Galeri Dokumentasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Kontak Kami</h6>
+        <ul class="list-unstyled small mb-0 text-center text-md-start">
+          <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Jl. Mastrip, Kampus Politeknik Negeri Jember</li>
+          <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i>ksr.pmi@polije.ac.id</li>
+          <li class="mb-2"><i class="fa-solid fa-phone me-2"></i>+62 812-3456-7890</li>
+        </ul>
+        <h6 class="small fw-bold mt-3 mb-1">Jam Operasional</h6>
+        <p class="small mb-0">Senin - Jumat: 08.00 - 16.00 WIB</p>
+        <p class="small">Sabtu & Minggu: Tutup</p>
+      </div>
+    </div>
+
+    <hr class="border-light my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+      <p class="small mb-0">&copy; <span id="year"></span> UKM KSR PMI POLIJE. All Rights Reserved.</p>
+      <div class="mt-3 mt-md-0">
+        <a href="#" class="text-white text-decoration-none small me-3">Kebijakan Privasi</a>
+        <a href="#" class="text-white text-decoration-none small me-3">Syarat & Ketentuan</a>
+        <a href="#" class="text-white text-decoration-none small">Peta Situs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Tombol back to top -->
+<button id="backToTop" class="btn btn-danger rounded-circle position-fixed bottom-0 end-0 m-4 shadow">
+  <i class="fa-solid fa-arrow-up text-white"></i>
+</button>
+
+<!-- Script -->
+<script>
+  // Tahun otomatis
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Tombol back to top
+  const backToTop = document.getElementById("backToTop");
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const cards = document.querySelectorAll(".card-item");
+const paginationBtns = document.querySelectorAll(".page-link");
+const filter = document.getElementById("filterDevisi");
+
+function showPage(page) {
+  const selectedFilter = filter.value;
+
+  // Jika filter ALL → aktifkan pagination
+  if (selectedFilter === "all") {
+    cards.forEach(card => {
+      card.style.display = (card.dataset.page === page) ? "block" : "none";
+    });
+
+    paginationBtns.forEach(btn => btn.classList.remove("active"));
+    document.querySelector(`.page-link[data-page="${page}"]`).classList.add("active");
+  } 
+  // Jika filter DEVISI → tampilkan SEMUA halaman yang cocok
+  else {
+    cards.forEach(card => {
+      card.style.display = (card.dataset.devisi === selectedFilter) ? "block" : "none";
+    });
+
+    // NONAKTIFKAN pagination saat filter aktif
+    paginationBtns.forEach(btn => btn.classList.remove("active"));
+  }
+}
+
+showPage("1"); // default page
+
+paginationBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (filter.value === "all") {
+      showPage(btn.dataset.page);
+    }
+  });
+});
+
+filter.addEventListener("change", () => {
+  showPage("1"); // reset ke page 1 setiap ganti filter
+});
+
+</script>
+
+</body>
+</html>

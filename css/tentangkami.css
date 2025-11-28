@@ -1,0 +1,255 @@
+.hero {
+    position: relative;
+    min-height: 60vh; /* sebelumnya 100vh */
+    padding: 80px 0; /* tambahkan padding agar isi tetap rapi */
+    background: linear-gradient(135deg, #c00000 0%, #8b0000 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+        /* Animated background elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-weight: 900;
+            font-size: 3.5rem;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero p.lead {
+            font-size: 1.3rem;
+            font-weight: 450;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Button styling */
+        .btn-custom {
+            padding: 0.6rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-danger-custom {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-danger-custom:hover {
+            background: #ffd733;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-outline-light-custom {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline-light-custom:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Floating elements */
+        .floating-icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        .floating-icon-1 {
+            top: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-icon-2 {
+            bottom: 15%;
+            right: 15%;
+            animation: float 10s ease-in-out infinite 1s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p.lead {
+                font-size: 1.2rem;
+            }
+            
+            .btn-custom {
+                padding: 0.7rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p.lead {
+                font-size: 1rem;
+            }
+            
+            .btn-custom {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+
+
+
+
+/* Css visi dan misi */
+
+  :root {
+      --primary: #c00000;
+      --primary-dark: #8b0000;
+      --text-dark: #2e2e2e;
+      --radius: 18px;
+    }
+
+    /* VISI */
+    .visi-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 50px 40px;
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    .visi-title {
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin-bottom: 18px;
+    }
+    .visi-desc {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      opacity: .95;
+    }
+
+    /* MISI */
+    .misi-section {
+      background: #fff;
+      padding: 50px 40px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      border-left: 4px solid var(--primary);
+    }
+    .badge-title {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.25);
+      margin-bottom: 18px;
+    }
+    .misi-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 28px;
+    }
+
+    .misi-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #e6e6e6;
+      align-items: flex-start;
+    }
+    .misi-number {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .misi-text {
+      color: var(--text-dark);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .visi-section,
+      .misi-section {
+        border-radius: var(--radius);
+        text-align: center;
+      }
+      .misi-item {
+        justify-content: center;
+        text-align: left;
+      }
+    }

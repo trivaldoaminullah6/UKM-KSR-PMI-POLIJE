@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UKM KSR</title>
+    <!-- Icone web -->
+   <link rel="icon" type="image/png" href="../image/web_logo.png">
+  <!-- Icone web end -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+  /* animasi berubah warna hanya teks */
+  .nav-link {
+    position: relative;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #6b7280 !important; /* abu-abu netral */
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #dc2626 !important; /* merah KSR */
+  }
+
+  .nav-link.active {
+    color: #dc2626 !important; /* tetap merah saat aktif */
+  }
+
+  /* dropdown animasi */
+  .dropdown-menu {
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+    .qr-img {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 10px;
+    }
+    .btn-ksr {
+      background-color: #c00000;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-ksr:hover {
+      background-color: #8b0000;
+    }
+
+  /* Tombol back to top */
+  #backToTop {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  #backToTop:hover {
+    transform: scale(1.1);
+  }
+
+
+  </style>
+
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-danger" href="#">UKM KSR POLIJE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="./tentang_kami.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="./kegiatan.html">Kegiatan</a></li>
+        <li class="nav-item"><a class="nav-link" href="./pencapaian.html">Pencapaian</a></li>
+
+
+        <!-- Dropdown Layanan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./layanan.html">Informasi Layanan</a></li>
+            <li><a class="dropdown-item" href="./detail_layanan.html">Detail Layanan</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Keanggotaan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kenggotaan</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" href="./daftar_anggota.html">Daftar Anggota</a></li>
+            <li><a class="dropdown-item" href="./pendaftaran_anggota.html">Pendaftaram Anggota</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="./galery_dokumentasi.html">Galeri Dokumentasi</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Pendaftaran -->
+
+  <!-- HEADER (tanpa card / tanpa rounded) -->
+  <header class="bg-ksr text-dark text-center py-5 mb-4 mt-5">
+    <div class="container">
+      <h1 class="fw-bold text-danger">PENDAFTARAN ANGGOTA BARU</h1>
+      <p class="mt-3 fs-5">
+        Ayo bergabung menjadi bagian dari keluarga besar 
+        <b>UKM KSR PMI Politeknik Negeri Jember</b> dan berkontribusi dalam pelayanan kemanusiaan.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" style="margin-top: -70px;">
+    <div class="row justify-content-center g-4">
+
+      <!-- QR CODE CARD -->
+      <div class="col-md-5">
+        <div class="card shadow border-0 text-center p-4">
+          <h4 class="text-danger fw-bold">Scan untuk Mendaftar</h4>
+          <img src="../image/qr-example.jpg" alt="QR Code" class="qr-img mx-auto mt-3 mb-3">
+          <p class="text-secondary">
+            Scan barcode di atas untuk mengisi formulir pendaftaran secara online.
+          </p>
+        </div>
+      </div>
+
+      <!-- SYARAT CARD -->
+      <div class="col-md-5">
+        <div class="card shadow border-0 p-4">
+          <h4 class="text-danger fw-bold">Syarat & Ketentuan</h4>
+          <ul class="mt-3 fs-6">
+            <li>Mahasiswa aktif Politeknik Negeri Jember</li>
+            <li>Bersedia mengikuti seluruh pelatihan dasar kepalangmerahan</li>
+            <li>Sehat jasmani dan rohani</li>
+            <li>Memiliki komitmen dalam kegiatan kemanusiaan</li>
+            <li>Mendaftar melalui QR Code yang tersedia</li>
+          </ul>
+
+          <a href="#" class="btn btn-ksr w-100 mt-3 py-2 fs-6">Daftar Sekarang</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+<!-- end Pendaftaran -->
+
+
+
+
+
+
+
+
+
+<!-- Dummy spacing -->
+<!-- <div class="my-5 py-5"></div>
+<div class="my-5 py-5"></div> -->
+<!-- Footer -->
+<footer class="bg-danger text-white pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+
+      <!-- Logo dan Info -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
+          <img src="../image/logo.jpeg" alt="Logo KSR" width="60" height="60" class="me-3 rounded-circle bg-white p-1 shadow">
+          <div>
+            <h5 class="fw-bold mb-1">KSR PMI POLIJE</h5>
+            <p class="small text-light mb-0">Unit Kegiatan Mahasiswa</p>
+            <a href="https://polije.ac.id/" target="_blank" class="text-white text-decoration-underline small">
+              https://polije.ac.id/
+            </a>
+          </div>
+        </div>
+        <p class="small text-light mb-3">
+          UKM Korps Sukarela PMI Politeknik Negeri Jember bergerak di bidang kemanusiaan,
+          kepalangmerahan, dan pengabdian masyarakat.
+        </p>
+        <div class="d-flex gap-3 mt-3 justify-content-center justify-content-md-start">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Tautan Cepat -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Tautan Cepat</h6>
+        <ul class="list-unstyled text-center text-md-start">
+          <li><a href="../index.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Beranda</a></li>
+          <li><a href="./tentang_kami.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Tentang Kami</a></li>
+          <li><a href="./kegiatan.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Kegiatan</a></li>
+          <li><a href="./pencaian.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Pencapaiaan</a></li>
+          <li><a href="./galery_dokumentasi.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Galeri Dokumentasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="col-md-4">
+        <h6 class="fw-semibold border-bottom border-light pb-2 mb-3 text-center text-md-start">Kontak Kami</h6>
+        <ul class="list-unstyled small mb-0 text-center text-md-start">
+          <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>Jl. Mastrip, Kampus Politeknik Negeri Jember</li>
+          <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i>ksr.pmi@polije.ac.id</li>
+          <li class="mb-2"><i class="fa-solid fa-phone me-2"></i>+62 812-3456-7890</li>
+        </ul>
+         <h6 class="small fw-bold mt-3 mb-1">Jam Operasional</h6>
+        <p class="small mb-0">Senin - Jumat: 08.00 - 16.00 WIB</p>
+        <p class="small">Sabtu & Minggu: Tutup</p>
+      </div>
+    </div>
+
+    <hr class="border-light my-4">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+      <p class="small mb-0">&copy; <span id="year"></span> UKM KSR PMI POLIJE. All Rights Reserved.</p>
+      <div class="mt-3 mt-md-0">
+        <a href="#" class="text-white text-decoration-none small me-3">Kebijakan Privasi</a>
+        <a href="#" class="text-white text-decoration-none small me-3">Syarat & Ketentuan</a>
+        <a href="#" class="text-white text-decoration-none small">Peta Situs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Tombol back to top -->
+<button id="backToTop" class="btn btn-danger rounded-circle position-fixed bottom-0 end-0 m-4 shadow">
+  <i class="fa-solid fa-arrow-up text-white"></i>
+</button>
+
+<script>
+  // tahun otomatis
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // tombol back to top
+  const backToTop = document.getElementById("backToTop");
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
