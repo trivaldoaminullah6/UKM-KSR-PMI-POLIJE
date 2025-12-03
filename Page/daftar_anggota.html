@@ -856,13 +856,13 @@ function showPage(page) {
     paginationBtns.forEach(btn => btn.classList.remove("active"));
     document.querySelector(`.page-link[data-page="${page}"]`).classList.add("active");
   } 
-  // Jika filter DEVISI tampilkan SEMUA halaman yang cocok
+  
   else {
     cards.forEach(card => {
       card.style.display = (card.dataset.devisi === selectedFilter) ? "block" : "none";
     });
 
-    // NONAKTIFKAN pagination saat filter aktif
+    
     paginationBtns.forEach(btn => btn.classList.remove("active"));
   }
 }
