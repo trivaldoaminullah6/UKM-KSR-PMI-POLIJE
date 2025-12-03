@@ -81,7 +81,7 @@
     }
 
     #daftar-anggota .card-body {
-    text-align: left; /* RATANYA TIDAK CENTER */
+    text-align: left; 
     }
 
     #daftar-anggota .card:hover {
@@ -93,7 +93,6 @@
     font-size: 1rem;
     }
 
-      /* Grid Card Layout */
   #cardContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -106,7 +105,6 @@
     }
   }
 
-  /* Card Style */
   .card {
     border-radius: 12px;
     overflow: hidden;
@@ -114,7 +112,6 @@
     background: #fff;
   }
 
-  /* Image Aspect Ratio */
   .card-img-top {
     height: 200px;
     object-fit: cover;
@@ -129,20 +126,17 @@
     margin-bottom: 6px;
   }
 
-  /* Hover efek */
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(220, 20, 60, .2);
   }
 
-  /* Badge */
   .badge {
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 20px;
   }
 
-  /* Pagination spacing */
   .pagination .page-link {
     border-radius: 6px;
     margin: 0 3px;
@@ -189,7 +183,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kenggotaan</a>
           <ul class="dropdown-menu shadow">
             <li><a class="dropdown-item" href="./daftar_anggota.html">Daftar Anggota</a></li>
-            <li><a class="dropdown-item" href="./pendaftaran_anggota.html">Pendaftaram Anggota</a></li>
+            <li><a class="dropdown-item" href="./pendaftaran_anggota.html">Pendaftaran Anggota</a></li>
           </ul>
         </li>
 
@@ -200,9 +194,7 @@
 </nav>
 
 
-<!-- ========================================================= -->
 <!-- 🎓 SECTION DOSEN PEMBIMBING + INFORMASI SINGKAT (CARD VERSION) -->
-<!-- ========================================================= -->
 
 <section class="container my-5 pt-4">
   <div class="card shadow-lg border-0 p-4 rounded-4" style="background: #ffffff;">
@@ -848,14 +840,14 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  const cards = document.querySelectorAll(".card-item");
+const cards = document.querySelectorAll(".card-item");
 const paginationBtns = document.querySelectorAll(".page-link");
 const filter = document.getElementById("filterDevisi");
 
 function showPage(page) {
   const selectedFilter = filter.value;
 
-  // Jika filter ALL → aktifkan pagination
+  // Jika filter All aktifkan pagination
   if (selectedFilter === "all") {
     cards.forEach(card => {
       card.style.display = (card.dataset.page === page) ? "block" : "none";
@@ -864,7 +856,7 @@ function showPage(page) {
     paginationBtns.forEach(btn => btn.classList.remove("active"));
     document.querySelector(`.page-link[data-page="${page}"]`).classList.add("active");
   } 
-  // Jika filter DEVISI → tampilkan SEMUA halaman yang cocok
+  // Jika filter DEVISI tampilkan SEMUA halaman yang cocok
   else {
     cards.forEach(card => {
       card.style.display = (card.dataset.devisi === selectedFilter) ? "block" : "none";
