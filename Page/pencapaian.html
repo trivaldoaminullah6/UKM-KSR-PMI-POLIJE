@@ -13,6 +13,8 @@
   
   <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
   <style>
   /* animasi berubah warna hanya teks */
   .nav-link {
@@ -56,22 +58,29 @@
     transform: scale(1.1);
   }
    /* Hero section */
-  .hero {
-    background: url('../image/konten2.jpeg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 150px 70px;
-    position: relative;
+  .hero-section{
+    height: 450px;
+    overflow: hidden;
   }
-  .hero::before {
-    content: "";
+  .overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.616);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
   }
-  .hero-content {
-    position: relative;
-    z-index: 2;
+  
+  .bbg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+  .hero content {
+     width: 900px;
+     padding: 20px;
   }
 
   /* Tombol back to top */
@@ -146,19 +155,27 @@ button:hover {
   </div>
 </nav>
 
-<!-- Dummy spacing -->
+<!--SECTION PENCAPAIAN MULAI-->
+
+    <section class="hero-section position-relative text-center text-white mt-5">
+      <img src="../image/donordarah.jpg" class="bbg" alt="foto ksr">
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      <div class="hero-content position-absolute top-50 start-50 translate-middle container px-3">
+        <h1 class="fw-bold display-5 display-md-3">PENCAPAIAN</h1>   
+          <p class="lead mt-3 mx-auto col-12 col-md-10 col-lg-8">Setiap pencapaian UKM KSR PMI Polije adalah wujud dedikasi dan semangat kemanusiaan anggota. 
+            Dari pelatihan hingga kegiatan sosial, langkah-langkah yang ditempuh menjadi motivasi bagi kami 
+            untuk terus memberi manfaat bagi masyarakat. 
+          </p>   
+      </div>
+    </section>
+      
+    <!-- Dummy spacing -->
 <div class="my-1 py-1"></div>
 <div class="my-3 py-3"></div>
 
 <!--SECTION PENCAPAIAN MULAI-->
 
  <div class="container py-3 pencapaian-section">
-      <header>
-        <div class="container p-3 pb-md-2 mx-auto text-center">
-          <h1 class="text-danger fw-bold fs-2">PENCAPAIAN</h1>
-          <p class="fs-8 text-muted fw-medium">Setiap pencapaian UKM KSR PMI Polije adalah wujud dedikasi dan semangat kemanusiaan anggota. Dari pelatihan hingga kegiatan sosial,<br> langkah-langkah yang ditempuh menjadi motivasi bagi kami untuk terus memberi manfaat bagi masyarakat. </p>
-        </div>
-      </header>
       
       <main>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center g-4">
@@ -290,6 +307,9 @@ button:hover {
   </div>
 </div>
 
+<!-- Dummy spacing -->
+<div class="my-1 py-1"></div>
+<div class="my-3 py-3"></div>
 
 <!-- Footer -->
 <footer class="bg-danger text-white pt-5 pb-4 mt-5">
@@ -326,7 +346,7 @@ button:hover {
           <li><a href="../index.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Beranda</a></li>
           <li><a href="./tentang_kami.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Tentang Kami</a></li>
           <li><a href="./kegiatan.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Kegiatan</a></li>
-          <li><a href="./pencapaian.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Pencapaiaan</a></li>
+          <li><a href="./pencaian.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Pencapaiaan</a></li>
           <li><a href="./galery_dokumentasi.html" class="text-light text-decoration-none d-block mb-2"><i class="fa fa-chevron-right me-2 small"></i>Galeri Dokumentasi</a></li>
         </ul>
       </div>
@@ -341,7 +361,8 @@ button:hover {
         </ul>
         <h6 class="small fw-bold mt-3 mb-1">Jam Operasional</h6>
         <p class="small mb-0">Senin - Jumat: 08.00 - 16.00 WIB</p>
-        <p class="small">Sabtu & Minggu: Tutup</p>
+        <p class="small mb-0">Sabtu: 08.00 - 14.00 WIB</p>
+        <p class="small">Minggu: Tutup</p>
       </div>
     </div>
 
@@ -363,6 +384,7 @@ button:hover {
   <i class="fa-solid fa-arrow-up text-white"></i>
 </button>
 
+<!-- SCRIPT -->
 <script>
   // tahun otomatis
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -372,6 +394,8 @@ button:hover {
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+ 
 </script>
 
 </body>

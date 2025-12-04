@@ -43,6 +43,7 @@
 
   body {
     background-color: #f3f4f6;
+    
   }
 
   /* Tombol back to top */
@@ -59,7 +60,81 @@
             border-bottom: 5px solid var(--ksr-red);
             margin-bottom: 3rem;
         }
+.hero-section {
+            height: 450px;
+            overflow: hidden;
+        }
 
+        .hero-desc {
+            font-size: 16px;
+        }
+
+        .ksr-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        header {
+            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header h2 {
+            color: #C50606;
+            text-align: center;
+            margin-top: 50px;
+            font-weight: bold;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .card {
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            filter: brightness(75%);
+        }
+
+        .donor-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .pelatihan-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .simulasi-img {
+            height: 225px;
+            object-fit: cover;
+            width: 100%;
+        }
         /* CARD FOTO */
         .card {
             border: none;
@@ -147,6 +222,21 @@
             <p class="lead text-white-50">Mengabadikan Aksi Kemanusiaan dan Pengabdian Kami</p>
         </div>
     </header> -->
+    <!-- SECTION -->
+<section class="hero-section position-relative text-center text-white mt-5">
+    <img src="../image/kepalangmerahan.jpg" class="ksr-bg img-fluid w-100 h-100 object-fit-cover" alt="Foto KSR">
+
+    <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+    <div class="hero-content position-absolute top-50 start-50 translate-middle container px-3">
+        <h1 class="fw-bold display-5 display-md-3">
+          Galeri Dokumentasi
+        </h1>
+        <p class="le  ad mt-3 mx-auto col-15 col-md-15 col-lg-8">
+         Galeri Foto UKM KSR menampilkan berbagai dokumentasi kegiatan, mulai dari pelatihan, aksi sosial, hingga momen kebersamaan anggota dalam menjalankan tugas kemanusiaan. Setiap foto merekam perjalanan dan pengalaman yang membentuk semangat solidaritas serta dedikasi kami sebagai relawan. Melalui galeri ini, pengunjung dapat melihat lebih dekat bagaimana UKM KSR berperan aktif dalam memberikan pelayanan dan kontribusi bagi masyarakat.
+        </p>
+    </div>
+</section>
 
     <div class="container my-5">
         
