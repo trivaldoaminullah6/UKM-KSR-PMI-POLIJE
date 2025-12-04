@@ -17,7 +17,6 @@
   <!-- Icone end -->
 
   <style>
-    /* animasi berubah warna hanya teks */
     .nav-link {
       position: relative;
       font-size: 0.88rem;
@@ -59,7 +58,6 @@
       transform: scale(1.1);
     }
 
-    /* Card anggota hover */
     #daftar-anggota .card:hover {
       transform: translateY(-5px);
       transition: 0.3s ease;
@@ -69,7 +67,7 @@
       font-size: 0.9rem;
     }
 
-    /* Card Anggota Styling */
+  
     #daftar-anggota .card {
     border-radius: 10px;
     overflow: hidden;
@@ -752,11 +750,6 @@
 </section>
 
 
-
-<!-- ========================================================= -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
-
 <!-- Footer -->
 <footer class="bg-danger text-white pt-5 pb-4 mt-5">
   <div class="container">
@@ -867,7 +860,7 @@ function showPage(page) {
   }
 }
 
-showPage("1"); // default page
+showPage("1"); 
 
 paginationBtns.forEach(btn => {
   btn.addEventListener("click", () => {
